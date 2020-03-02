@@ -5,17 +5,22 @@ using UnityEngine;
 public class CounterRotation : MonoBehaviour
 {
     [SerializeField] GameObject pointTo;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        
+        if(pointTo == null)
+        {
+            pointTo = FindObjectOfType<Camera>().gameObject;
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {      
-        var pos = transform.parent.transform;
+    {
+        transform.LookAt(pointTo.transform);
+        transform.Rotate(new Vector3(0, 180, 0));
+        //var pos = transform.parent.transform;
 
-        transform.rotation = Quaternion.FromToRotation(pos.position, pointTo.transform.position);
+        //transform.rotation = Quaternion.FromToRotation(pos.position, pointTo.transform.position);
     }
 }

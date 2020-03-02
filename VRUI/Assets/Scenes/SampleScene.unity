@@ -410,7 +410,7 @@ Canvas:
   m_GameObject: {fileID: 245690648}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 1687258584}
   m_PlaneDistance: 0.1
   m_PixelPerfect: 0
@@ -430,8 +430,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245690648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalScale: {x: 0.00040732857, y: 0.00040732857, z: 0.00040732857}
   m_Children:
   - {fileID: 40734265}
   m_Father: {fileID: 0}
@@ -440,8 +440,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 283.48135}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &351611165
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99810d6c41db3ef47b4c63dd83298b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackingSpace: 0
+  m_TrackingSpace: 1
   m_StationaryCameraYOffset: 1.36144
   m_CameraFloorOffsetObject: {fileID: 464695798}
 --- !u!1 &464695798
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd507c28aa963cd43a5ccf24c22418f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointTo: {fileID: 351611165}
+  pointTo: {fileID: 1687258581}
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,7 +1453,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 0
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
