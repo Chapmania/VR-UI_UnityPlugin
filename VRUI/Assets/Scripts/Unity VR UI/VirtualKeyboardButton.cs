@@ -6,7 +6,7 @@ using WindowsInput;
 //using WindowsInput.Native;
 public class VirtualKeyboardButton : MonoBehaviour
 {
-    InputSimulator virtKeyboard;
+    IKeyboardSimulator keyboardSim;
     Rigidbody rb;
     [SerializeField] private string Key;
     [SerializeField] private float maxKeyPressDistance , resistence;
@@ -16,7 +16,7 @@ public class VirtualKeyboardButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        virtKeyboard = new InputSimulator();
+        keyboardSim = FindObjectOfType<VRInputController>().VRInput.Keyboard;
         rb = GetComponent<Rigidbody>();
         unpressedPos = gameObject.transform.localPosition;
         pressedPos = gameObject.transform.localPosition + (gameObject.transform.transform.forward * maxKeyPressDistance);
@@ -33,23 +33,27 @@ public class VirtualKeyboardButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //lerpPos 0 = Button unpressed, lerpPos 1 = Button fully pressed
-        transform.localPosition = Vector3.Lerp(unpressedPos, pressedPos, lerpPos);
-
-        if (lerpPos >= keyPressRange)
-            virtKeyboard.Keyboard.KeyDown(VirtualKeyCode.VK_W);
-        else
-            virtKeyboard.Keyboard.KeyUp(VirtualKeyCode.VK_W);
-
-        if(lerpPos <= previousLerpPos)
+        //Minimising performance hit from active buttons
+        if(lerpPos != 0)
         {
-            //Button is no longer being pressed
-            lerpPos -= Time.deltaTime / resistence;
-        }       
+            //lerpPos 0 = Button unpressed, lerpPos 1 = Button fully pressed
+            transform.localPosition = Vector3.Lerp(unpressedPos, pressedPos, lerpPos);
 
-        Debug.DrawRay(transform.position + unpressedPos, transform.position + unpressedPos - pressedPos, Color.red, 1f);
+            if (lerpPos >= keyPressRange)
+                keyboardSim.KeyDown(VirtualKeyCode.VK_W);
+            else
+                keyboardSim.KeyUp(VirtualKeyCode.VK_W);
 
-        lerpPos = Mathf.Clamp(lerpPos, 0, 1);
-        previousLerpPos = lerpPos;
+            if (lerpPos <= previousLerpPos)
+            {
+                //Button is no longer being pressed
+                lerpPos -= Time.deltaTime / resistence;
+            }
+
+            Debug.DrawRay(transform.position + unpressedPos, transform.position + unpressedPos - pressedPos, Color.red, 1f);
+
+            lerpPos = Mathf.Clamp(lerpPos, 0, 1);
+            previousLerpPos = lerpPos;
+        }        
     }
 }

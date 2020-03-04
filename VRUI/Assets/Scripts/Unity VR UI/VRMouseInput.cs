@@ -2,46 +2,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WindowsInput.Native;
+using WindowsInput;
 
 public class VRMouseInput : MonoBehaviour
 {
+    private MouseSimulator mouseSim;
+    public RectTransform fauxMouse;
     [SerializeField] private string inputAxisName;
     [SerializeField] private float buttonThreshold = 0.5f;
-    [SerializeField] private Canvas[] affectedCanvases;
-    [SerializeField] private Camera[] affectedCameras;
+    [SerializeField] private Canvas affectedCanvas;
+    [SerializeField] private Camera affectedCamera;
 
+    private Vector2 uiCanvasOffset;
+
+    public Vector2 mousePosition;
     // Start is called before the first frame update
     void Start()
     {
-        var col = new int[7];
+        mouseSim = new MouseSimulator(FindObjectOfType<VRInputController>().VRInput);
 
-        //col.
+        uiCanvasOffset = new Vector2(affectedCanvas.pixelRect.size.x / 2, affectedCanvas.pixelRect.size.y / 2);
     }
     
     // Update is called once per frame
     void Update()
     {
-        foreach (var camera in affectedCameras)
-        {
-            //Physics.Raycast
-            Debug.DrawLine(transform.position, camera.WorldToScreenPoint(transform.position), Color.blue);
+        //Debug.DrawLine(transform.position, affectedCamera.WorldToScreenPoint(transform.position), Color.blue);
+        var viewPortRaw = affectedCamera.WorldToViewportPoint(transform.position);
+        
 
-            //affectedCanvases[0].
-        }
-        if(Input.GetButton(inputAxisName) || Input.GetAxis(inputAxisName) > buttonThreshold)
-        {
-            foreach (var canvas in affectedCanvases)
-            {
-                //Debug.DrawLine(transform.position, canvas.transform.position, Color.blue);
-            }
-
-            foreach (var cam in affectedCameras)
-            {
-                //cam.WorldToScreenPoint(transform.position);
-                
-
-                //Debug.DrawLine(transform.position, cam.WorldToScreenPoint(transform.position), Color.red);
-            }
-        }
+        mousePosition = new Vector2(viewPortRaw.x * affectedCanvas.pixelRect.size.x, viewPortRaw.y * affectedCanvas.pixelRect.size.y);
+        fauxMouse.localPosition = mousePosition - uiCanvasOffset;
+        //mouseSim.MoveMouseTo(mousePos.x, mousePos.y);
     }
 }

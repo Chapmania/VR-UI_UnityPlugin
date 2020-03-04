@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\SetCorrectCameraHeight.cs" />
     <Compile Include="Assets\Scripts\Unity VR UI\CounterRotation.cs" />
     <Compile Include="Assets\Scripts\Unity VR UI\VirtualKeyboardButton.cs" />
+    <Compile Include="Assets\Scripts\Unity VR UI\VRInputController.cs" />
     <Compile Include="Assets\Scripts\Unity VR UI\VRMouseInput.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Reference Include="Unity.ProBuilder">
@@ -323,6 +324,9 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="WindowsInput">
+      <HintPath>D:/olive/Documents/GitHub/VR-UI_UnityPlugin/VRUI/Assets/Scripts/Unity VR UI/WindowsInput.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>D:/olive/Documents/GitHub/VR-UI_UnityPlugin/VRUI/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -331,9 +335,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/olive/Documents/GitHub/VR-UI_UnityPlugin/VRUI/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowsInput">
-      <HintPath>D:/olive/Documents/GitHub/VR-UI_UnityPlugin/VRUI/Assets/Scripts/Unity VR UI/WindowsInput.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
