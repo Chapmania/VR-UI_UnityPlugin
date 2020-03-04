@@ -19,6 +19,11 @@ public class CounterRotation : MonoBehaviour
     {
         transform.LookAt(pointTo.transform);
         transform.Rotate(new Vector3(0, 180, 0));
+
+        if(Input.GetKey(KeyCode.W))
+        {
+            Debug.Log("W");
+        }
         //var pos = transform.parent.transform;
 
         //transform.rotation = Quaternion.FromToRotation(pos.position, pointTo.transform.position);
