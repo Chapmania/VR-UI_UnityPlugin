@@ -1171,7 +1171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fauxMouse: {fileID: 1708024009}
   inputAxisName: Oculus_GearVR_LIndexTrigger
-  buttonThreshold: 0.5
   affectedCanvas: {fileID: 245690651}
   affectedCamera: {fileID: 1687258584}
   mousePosition: {x: 0, y: 0}
@@ -1329,7 +1328,7 @@ Transform:
   m_GameObject: {fileID: 987158791}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.05}
   m_Children: []
   m_Father: {fileID: 802511592}
   m_RootOrder: 1
@@ -1346,12 +1345,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4cc6d64e7ea8e48b4a668b7493b45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: E
   maxKeyPressDistance: 0.5
   resistence: 0.1
-  keyPressRange: 0.748
-  previousLerpPos: 0
-  lerpPos: 0
+  keyPressRange: 0.75
+  key: 87
 --- !u!65 &987158794
 BoxCollider:
   m_ObjectHideFlags: 0

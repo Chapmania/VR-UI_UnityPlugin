@@ -10,7 +10,7 @@ public class VRMouseInput : MonoBehaviour
     private MouseSimulator mouseSim;
     public RectTransform fauxMouse;
     [SerializeField] private string inputAxisName;
-    [SerializeField] private float buttonThreshold = 0.5f;
+    //[SerializeField] private float buttonThreshold = 0.5f;
     [SerializeField] private Canvas affectedCanvas;
     [SerializeField] private Camera affectedCamera;
 
@@ -33,7 +33,10 @@ public class VRMouseInput : MonoBehaviour
         
 
         mousePosition = new Vector2(viewPortRaw.x * affectedCanvas.pixelRect.size.x, viewPortRaw.y * affectedCanvas.pixelRect.size.y);
-        fauxMouse.localPosition = mousePosition - uiCanvasOffset;
-        //mouseSim.MoveMouseTo(mousePos.x, mousePos.y);
+        mousePosition -= uiCanvasOffset;
+        
+        fauxMouse.localPosition = new Vector2(viewPortRaw.x, viewPortRaw.y);
+        var simMousePos = affectedCamera.ViewportToScreenPoint(mousePosition); //was mousePosition
+        mouseSim.MoveMouseToPositionOnVirtualDesktop(simMousePos.x,-simMousePos.y);
     }
 }
