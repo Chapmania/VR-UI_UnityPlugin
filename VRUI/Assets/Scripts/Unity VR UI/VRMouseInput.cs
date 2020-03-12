@@ -33,7 +33,8 @@ public class VRMouseInput : MonoBehaviour
         mousePosition -= uiCanvasOffset;
 
         //Working approximation of the handheld position to the canvas, exaggerates a little too much near edges, clamping required.
-        fauxMouse.transform.localPosition = new Vector2(mousePosition.x, mousePosition.y);
+        
+        fauxMouse.transform.localPosition = (affectedCamera.transform.position - transform.position).z >= 0? new Vector2(mousePosition.x, mousePosition.y) : new Vector2(-mousePosition.x, -mousePosition.y);
 
         inputAxis = Input.GetAxis(inputAxisName);
          

@@ -87,9 +87,9 @@ public class FakeMouse : MonoBehaviour
                     var ptrUp = pointerUp.ToList();
                     ptrUp.Remove(obj);
                     pointerUp = ptrUp.ToArray();
-                }                
-            }
-            obj.OnPointerExit(new PointerEventData(EventSystem.current));
+                }
+                obj.OnPointerExit(new PointerEventData(EventSystem.current));
+            }            
         }
 
         if(clicking == false)

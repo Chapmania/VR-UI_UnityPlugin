@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fauxMouse: {fileID: 1708024012}
-  inputAxisName: Oculus_GearVR_LIndexTrigger
+  inputAxisName: Oculus_GearVR_LThumbstickX
   mouseInput: 0
   axisRequirement: 0.5
   affectedCanvas: {fileID: 245690651}
@@ -2094,6 +2094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Keyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824651147786335526, guid: 0bdf5c9c0f6c4df4f9b2ea61c91643b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3025287173097163680, guid: 0bdf5c9c0f6c4df4f9b2ea61c91643b5,
         type: 3}
