@@ -243,11 +243,9 @@ D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\Boo.Lang.Useful.
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\Unity.CecilTools.dll
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\Unity.Cecil.Pdb.dll
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\Unity.Cecil.Mdb.dll
-D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\Assembly-CSharp.pdb
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\UnityEngine.xml
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\UnityEditor.xml
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\WindowsInput.pdb
-D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\WindowsInput.xml
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\Unity.ProBuilder.pdb
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\Unity.Polybrush.pdb
 D:\olive\Documents\GitHub\VR-UI_UnityPlugin\VRUI\Temp\bin\Debug\Unity.Polybrush.Editor.pdb

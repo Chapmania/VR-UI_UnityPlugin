@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 351611166}
   - component: {fileID: 351611167}
   - component: {fileID: 351611168}
+  - component: {fileID: 351611169}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -503,6 +504,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d57a9f87a65a741b754eb2825dcad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &351611169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351611165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 232116347}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &464695798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1103,7 @@ GameObject:
   - component: {fileID: 802511590}
   - component: {fileID: 802511589}
   - component: {fileID: 802511591}
+  - component: {fileID: 802511593}
   m_Layer: 0
   m_Name: Left Hand
   m_TagString: Untagged
@@ -1169,10 +1186,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86bfac22c71748b42892a47ea4491881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fauxMouse: {fileID: 1708024009}
+  fauxMouse: {fileID: 1708024012}
   inputAxisName: Oculus_GearVR_LIndexTrigger
+  mouseInput: 0
+  axisRequirement: 0.5
   affectedCanvas: {fileID: 245690651}
   affectedCamera: {fileID: 1687258584}
+  inputAxis: 0
   mousePosition: {x: 0, y: 0}
 --- !u!4 &802511592
 Transform:
@@ -1190,6 +1210,19 @@ Transform:
   m_Father: {fileID: 464695799}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &802511593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802511587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29567dfdd9cea8e41a1276a288c1d281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: {fileID: 802511591}
 --- !u!1001 &821952736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1686,6 +1719,7 @@ GameObject:
   - component: {fileID: 1708024009}
   - component: {fileID: 1708024011}
   - component: {fileID: 1708024010}
+  - component: {fileID: 1708024012}
   m_Layer: 0
   m_Name: FakeMouse
   m_TagString: Untagged
@@ -1707,9 +1741,9 @@ RectTransform:
   m_Father: {fileID: 245690652}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -10}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -390, y: 133}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1708024010
@@ -1749,6 +1783,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708024008}
   m_CullTransparentMesh: 0
+--- !u!114 &1708024012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708024008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d20abf50d8b04e4180f3a2dbc8e44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  es: {fileID: 232116349}
+  entered: []
+  pointerUp: []
 --- !u!1 &1830065425
 GameObject:
   m_ObjectHideFlags: 0
